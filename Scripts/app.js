@@ -1,8 +1,8 @@
 /**
- * this is a mini profile web application which is all about Md Mamunur Rahman 
+ * this is a mini profile extended web application which is all about Md Mamunur Rahman 
  * @Author Md Mamunur Rahman
- * @Version 0.0.3 Added all decoration
- * @Last Update 03-june-2016
+ * @Version 0.0.1 Added mini portfolio project from assignment 1 
+ * @Last Update 09-June-2016
  */
 
 /* main JavaScript file */
@@ -12,6 +12,33 @@
     // define arrays of HTML elements
     var paragraphHeading = [];
     var paragraphElements = [];
+
+    //creat a reference to the button in contact page
+    var sendButton = document.getElementById("sendButton");
+
+    sendButton.addEventListener("click",sendButtonClick);
+    function sendButtonClick(event)
+    {
+        console.log("clicked");
+
+    }
+
+    //create a reference for firstName field
+    var firstName = document.getElementById("firstName");
+
+    //create a reference to the form
+    var contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit",contactFormSubmit);
+
+    function contactFormSubmit(event){
+        event.preventDefault();
+        console.log("submitted");
+        console.log(firstName.value);
+        firstName.value="";
+    }
+
+    
+   
 
     //bonding ids with paragraphHeading arrays
     paragraphHeading[0] = document.getElementById("homeHeading");
